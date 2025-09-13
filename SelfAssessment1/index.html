@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Essential SEO + basics -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sample Webpage — Demo Layout</title>
+  <meta name="description" content="A simple demo page with a navbar, sections, a 3x3 grid using only divs and spans, and SEO-friendly head tags." />
+  <link rel="canonical" href="https://example.com/sample" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Optional social (helps sharing; not a ranking factor) -->
+  <meta property="og:title" content="Sample Webpage — Demo Layout" />
+  <meta property="og:description" content="Navbar, sections, and a 3x3 grid with divs/spans only." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/sample" />
+
+  <!-- (Optional) JSON-LD example for structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Sample Webpage — Demo Layout",
+    "description":"Navbar, sections, and a 3x3 grid with divs/spans only."
+  }
+  </script>
+
+  <style>
+    /* Your original styling (unchanged) */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    header, nav, footer {
+      background: #333;
+      color: #fff;
+      padding: 1rem;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 1rem;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+    main { padding: 2rem; }
+    section { margin-bottom: 2rem; }
+    footer { text-align: center; }
+    /* NOTE: No CSS used for the grid section below on purpose per your requirement */
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#section1">Section 1</a></li>
+        <li><a href="#section2">Section 2</a></li>
+        <li><a href="#section3">Section 3</a></li>
+        <li><a href="#section4">Section 4</a></li>
+        <li><a href="#grid">3×3 Grid</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Main Header of the Page</h1>
+
+    <section id="section1">
+      <h2>Subheader 1</h2>
+      <p>This is the content for section 1</p>
+    </section>
+
+    <section id="section2">
+      <h2>Subheader 2</h2>
+      <p>This is the content for section 2</p>
+    </section>
+
+    <section id="section3">
+      <h2>Subheader 3</h2>
+      <p>This is the content for section 3</p>
+    </section>
+
+    <section id="section4">
+      <h2>Subheader 4</h2>
+      <p>This is the content for section 4</p>
+    </section>
+
+    <!-- 3×3 grid using ONLY divs and spans-->
+    <section id="grid" aria-label="3 by 3 layout without CSS">
+      <h2>3×3 Grid</h2>
+
+      <div>
+        <span>[1,1]</span> <span>[1,2]</span> <span>[1,3]</span>
+      </div>
+      <div>
+        <span>[2,1]</span> <span>[2,2]</span> <span>[2,3]</span>
+      </div>
+      <div>
+        <span>[3,1]</span> <span>[3,2]</span> <span>[3,3]</span>
+      </div>
+
+      <!--
+        Notes:
+        - Each row is a block-level <div>.
+        - Each cell is an inline <span>.
+      -->
+    </section>
+
+    <!-- Useful tags list -->
+    <section id="useful-tags">
+      <h2>10 Useful HTML Tags</h2>
+      <ol>
+        <li><code>&lt;div&gt;</code> — block container for layout</li>
+        <li><code>&lt;span&gt;</code> — inline container for small chunks</li>
+        <li><code>&lt;h1&gt;..&lt;h6&gt;</code> — headings hierarchy</li>
+        <li><code>&lt;p&gt;</code> — paragraphs</li>
+        <li><code>&lt;a&gt;</code> — hyperlinks / anchors</li>
+        <li><code>&lt;section&gt;</code> — semantic grouping of content</li>
+        <li><code>&lt;nav&gt;</code> — navigation landmarks</li>
+        <li><code>&lt;footer&gt;</code> — page/footer content</li>
+        <li><code>&lt;img&gt;</code> — images</li>
+        <li><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code> — lists</li>
+      </ol>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Adrian Halgas</p>
+  </footer>
+
+</body>
+</html>
