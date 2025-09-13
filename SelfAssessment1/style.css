@@ -35,8 +35,7 @@ nav ul li a {
 /* Main content */
 main {
   padding: 2rem;
-  /* Provide room for a fixed footer so content isn't hidden */
-  padding-bottom: 5rem; /* adjust if you change footer height */
+  padding-bottom: 5rem; 
 }
 
 section {
@@ -55,7 +54,7 @@ footer {
 
 /* Box-Model Gallery (rows: margin/padding/border; columns: 0/5/10) */
 
-/* A simple 3-column grid for the gallery */
+/* 3-column grid for the gallery */
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -107,7 +106,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ========== Positioning Playground ========== */
+/*  Positioning Playground */
 
 /* Acts as the positioned ancestor for absolute children */
 .positioning {
@@ -129,10 +128,10 @@ footer {
   margin: 0.6rem 0;
 }
 
-/* 1) Static: default flow */
+/* Static: default flow */
 .pos-static { /* intentionally empty */ }
 
-/* 2) Relative: offsets from its normal spot; establishes containing block for abs children */
+/* Relative: offsets from its normal spot establishes containing block for abs children */
 .pos-relative {
   position: relative;
   left: 8px; /* small nudge */
@@ -140,7 +139,7 @@ footer {
   outline: 2px dashed rgba(0,0,0,0.1); /* visual hint */
 }
 
-/* 3) Absolute: positioned relative to .positioning (nearest positioned ancestor) */
+/* Absolute: positioned relative to .positioning (nearest positioned ancestor) */
 .pos-absolute {
   position: absolute;
   right: 12px;
@@ -149,7 +148,7 @@ footer {
   border-color: #7dd3fc;
 }
 
-/* 4) Fixed: attached to viewport (example floating badge/button) */
+/* Fixed: attached to viewport (example floating badge/button) */
 .pos-fixed-badge {
   position: fixed;
   right: 14px;
