@@ -9,35 +9,8 @@
   <link rel="canonical" href="https://example.com/sample" />
   <meta name="robots" content="index,follow" />
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-    header, nav, footer {
-      background: #333;
-      color: #fff;
-      padding: 1rem;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 1rem;
-    }
-    nav ul li {
-      display: inline;
-    }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-    }
-    main { padding: 2rem; }
-    section { margin-bottom: 2rem; }
-    footer { text-align: center; }
-  </style>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -50,6 +23,11 @@
         <li><a href="#section3">Section 3</a></li>
         <li><a href="#section4">Section 4</a></li>
         <li><a href="#grid">3×3 Grid</a></li>
+        <li><a href="#box-model">Box Model</a></li>
+        <li><a href="#fonts">Font Sizes</a></li>
+        <li><a href="#positioning">Positioning</a></li>
+        <li><a href="#seo-tags">SEO Head Tags</a></li>
+        <li><a href="#useful-tags">Useful Tags</a></li>
       </ul>
     </nav>
   </header>
@@ -78,25 +56,128 @@
       <p>This is the content for section 4</p>
     </section>
 
-    <!-- 3×3 grid using divs and spans-->
+    <!-- 3×3 grid using ONLY divs and spans (no CSS for layout) -->
     <section id="grid" aria-label="3 by 3 layout without CSS">
       <h2>3×3 Grid</h2>
+      <div><span>[1,1]</span> <span>[1,2]</span> <span>[1,3]</span></div>
+      <div><span>[2,1]</span> <span>[2,2]</span> <span>[2,3]</span></div>
+      <div><span>[3,1]</span> <span>[3,2]</span> <span>[3,3]</span></div>
+      <!-- Each row is a <div>, each cell is a <span>. -->
+    </section>
 
-      <div>
-        <span>[1,1]</span> <span>[1,2]</span> <span>[1,3]</span>
-      </div>
-      <div>
-        <span>[2,1]</span> <span>[2,2]</span> <span>[2,3]</span>
-      </div>
-      <div>
-        <span>[3,1]</span> <span>[3,2]</span> <span>[3,3]</span>
-      </div>
+    <!-- Box Model Gallery (uses CSS classes from style.css) -->
+    <section id="box-model">
+      <h2>Box Model Gallery</h2>
+      <p>Rows vary one property; columns show values <code>0px</code>, <code>5px</code>, <code>10px</code>.</p>
 
-      <!--
-        Notes:
-        - Each row is a block-level <div>.
-        - Each cell is an inline <span>.
-      -->
+      <div class="gallery">
+        <!-- Column headers -->
+        <div class="head">0px</div>
+        <div class="head">5px</div>
+        <div class="head">10px</div>
+
+        <!-- Row 1: MARGIN -->
+        <div class="cell">
+          <strong>margin: 0px</strong><br />
+          <span class="demo-box m-0 p-10 b-5">Box</span>
+          <div class="note">No outer spacing.</div>
+        </div>
+        <div class="cell">
+          <strong>margin: 5px</strong><br />
+          <span class="demo-box m-5 p-10 b-5">Box</span>
+          <div class="note">Small outer spacing.</div>
+        </div>
+        <div class="cell">
+          <strong>margin: 10px</strong><br />
+          <span class="demo-box m-10 p-10 b-5">Box</span>
+          <div class="note">Larger outer spacing.</div>
+        </div>
+
+        <!-- Row 2: PADDING -->
+        <div class="cell">
+          <strong>padding: 0px</strong><br />
+          <span class="demo-box m-5 p-0 b-5">Content</span>
+          <div class="note">Content hugs the border.</div>
+        </div>
+        <div class="cell">
+          <strong>padding: 5px</strong><br />
+          <span class="demo-box m-5 p-5 b-5">Content</span>
+          <div class="note">Comfortable inner spacing.</div>
+        </div>
+        <div class="cell">
+          <strong>padding: 10px</strong><br />
+          <span class="demo-box m-5 p-10 b-5">Content</span>
+          <div class="note">Generous inner spacing.</div>
+        </div>
+
+        <!-- Row 3: BORDER WIDTH -->
+        <div class="cell">
+          <strong>border-width: 0px</strong><br />
+          <span class="demo-box m-5 p-10 b-0" style="border-style: solid;">Box</span>
+          <div class="note">No visible outline.</div>
+        </div>
+        <div class="cell">
+          <strong>border-width: 5px</strong><br />
+          <span class="demo-box m-5 p-10 b-5" style="border-style: solid;">Box</span>
+          <div class="note">Distinct outline.</div>
+        </div>
+        <div class="cell">
+          <strong>border-width: 10px</strong><br />
+          <span class="demo-box m-5 p-10 b-10" style="border-style: solid;">Box</span>
+          <div class="note">Bold outline.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Itemized list with 6 different inline font sizes -->
+    <section id="fonts">
+      <h2>Inline Font Sizes (absolute + relative)</h2>
+      <ul>
+        <li style="font-size:12px;"><strong>12px</strong> — great for tight UI labels (e.g., compact badges).</li>
+        <li style="font-size:16px;"><strong>16px</strong> — readable body text on desktop; common browser default.</li>
+        <li style="font-size:1.25rem;"><strong>1.25rem</strong> — scales with root size; good for section headings.</li>
+        <li style="font-size:0.875em;"><strong>0.875em</strong> — relative to parent; nice for fine print inside a card.</li>
+        <li style="font-size:110%;"><strong>110%</strong> — subtle emphasis within a component without hard-coding px.</li>
+        <li style="font-size:3vw;"><strong>3vw</strong> — fluid hero headline that grows/shrinks with viewport width.</li>
+      </ul>
+    </section>
+
+    <!-- Creative positioning playground (4 options) -->
+    <section id="positioning">
+      <h2>Positioning Playground</h2>
+      <p>Examples of <code>static</code>, <code>relative</code>, <code>absolute</code>, and <code>fixed</code>. Footer stays fixed at the bottom of the screen.</p>
+
+      <div class="positioning">
+        <div class="pos-box pos-static">
+          <strong>Static</strong> — default document flow (articles, paragraphs).
+        </div>
+
+        <div class="pos-box pos-relative">
+          <strong>Relative</strong> — nudged from normal spot; also establishes a containing block for absolute children.
+        </div>
+
+        <div class="pos-box pos-absolute">
+          <strong>Absolute</strong> — positioned relative to this section (nearest positioned ancestor); great for badges/overlays.
+        </div>
+
+        <div class="pos-box pos-fixed-badge">
+          <strong>Fixed</strong> — pinned to the viewport (e.g., “back to top” or floating CTA).
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO head tags list (research summary) -->
+    <section id="seo-tags">
+      <h2>Important &lt;head&gt; Tags for SEO</h2>
+      <ul>
+        <li><code>&lt;title&gt;</code> — concise, unique page title.</li>
+        <li><code>&lt;meta name="description"&gt;</code> — compelling summary for snippets/CTR.</li>
+        <li><code>&lt;link rel="canonical"&gt;</code> — preferred URL to handle duplicates.</li>
+        <li><code>&lt;meta name="robots"&gt;</code> — index/follow, or control crawling per page.</li>
+        <li><code>&lt;meta name="viewport"&gt;</code> — mobile-friendly rendering.</li>
+        <li>Open Graph / Twitter Cards — better social sharing previews.</li>
+        <li>Structured data (<code>&lt;script type="application/ld+json"&gt;</code>) — eligibility for rich results.</li>
+      </ul>
     </section>
 
     <!-- Useful tags list -->
@@ -117,7 +198,7 @@
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer fixed by CSS -->
   <footer>
     <p>Adrian Halgas</p>
   </footer>

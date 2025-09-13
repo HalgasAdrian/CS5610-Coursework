@@ -1,0 +1,160 @@
+/* General body styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header, nav, and footer */
+header,
+nav,
+footer {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+/* Navigation menu */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Main content */
+main {
+  padding: 2rem;
+  /* Provide room for a fixed footer so content isn't hidden */
+  padding-bottom: 5rem; /* adjust if you change footer height */
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  /* Keep footer at bottom of the screen */
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Box-Model Gallery (rows: margin/padding/border; columns: 0/5/10) */
+
+/* A simple 3-column grid for the gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.gallery .head {
+  text-align: center;
+  font-weight: bold;
+  background: #444;
+  padding: 0.5rem;
+  border: 1px dashed #666;
+  border-radius: 6px;
+}
+
+.cell {
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.75rem;
+  color: #222;
+}
+
+.demo-box {
+  display: inline-block;
+  background: #e9eef7;
+  border: 2px solid #99a7c2;
+  border-radius: 6px;
+}
+
+/* Helpers to vary margin/padding/border width across columns */
+.m-0  { margin: 0; }
+.m-5  { margin: 5px; }
+.m-10 { margin: 10px; }
+
+.p-0  { padding: 0; }
+.p-5  { padding: 5px; }
+.p-10 { padding: 10px; }
+
+/* Border width helpers (requires a visible border style) */
+.b-0  { border-width: 0; }
+.b-5  { border-width: 5px; }
+.b-10 { border-width: 10px; }
+
+/* Small label text inside cells */
+.note {
+  margin-top: 0.5rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* ========== Positioning Playground ========== */
+
+/* Acts as the positioned ancestor for absolute children */
+.positioning {
+  position: relative; /* anchor for .pos-absolute */
+  min-height: 220px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  background: #fafafa;
+  color: #222;
+}
+
+/* Generic demo box look */
+.pos-box {
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  margin: 0.6rem 0;
+}
+
+/* 1) Static: default flow */
+.pos-static { /* intentionally empty */ }
+
+/* 2) Relative: offsets from its normal spot; establishes containing block for abs children */
+.pos-relative {
+  position: relative;
+  left: 8px; /* small nudge */
+  top: 4px;
+  outline: 2px dashed rgba(0,0,0,0.1); /* visual hint */
+}
+
+/* 3) Absolute: positioned relative to .positioning (nearest positioned ancestor) */
+.pos-absolute {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  background: #dbf4ff;
+  border-color: #7dd3fc;
+}
+
+/* 4) Fixed: attached to viewport (example floating badge/button) */
+.pos-fixed-badge {
+  position: fixed;
+  right: 14px;
+  top: 14px;
+  background: #e0fbeb;
+  border-color: #86efac;
+  z-index: 10; /* stay above content */
+}
